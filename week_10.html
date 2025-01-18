@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/style/week_10.css">
+    <script src="assets/style/week_10.js"></script>
+    <title>WEEK_10</title>
+</head>
+<body>
+    <main>
+        
+    <h1 class="page-title">Моя галерея</h1>
+    
+    <div class="gallery">
+    <img src="assets/image/pic_week10(1).webp" width="400px";height=250px;  alt="кит">
+    <img src="assets/image/pic_week10(2).jpg" width="400px";height=150px; alt="звездное небо">
+    </div>
+<div class="price">
+    
+    <label for="quantity">Количество:</label>
+    <input type="number" id="quantity" value="2"><br><br>
+
+    <label for="price">Цена за единицу:</label>
+    <input type="number" id="price" value="15000000"><br><br>
+
+    <button onclick="calculateTotalPrice()">Рассчитать стоимость</button>
+</div>
+
+    <script>
+    function calculateTotalPrice(quantity = 2, price = 15000000) {
+        // Получаем значения из полей ввода, если они указаны
+        const qty = document.getElementById('quantity').value || quantity;
+        const prc = document.getElementById('price').value || price;
+
+        // Преобразуем полученные значения в числа
+        const totalQuantity = parseFloat(qty);
+        const totalPrice = parseFloat(prc);
+
+        // Вычисляем общую стоимость
+        const totalCost = totalQuantity * totalPrice;
+
+        // Форматируем значение с использованием toLocaleString
+        const formattedCost = totalCost.toLocaleString('ru-RU', {
+            style: 'currency',
+            currency: 'RUB'
+        });
+
+        // Выводим результат с помощью alert
+        alert("Стоимость покупки: " + formattedCost);
+    }
+    </script>
+    </main>
+</body>
+</html>

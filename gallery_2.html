@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/style/gallery_2.css">
+    
+    <title>Галерея_2</title>
+</head>
+
+    <style>
+        /* Простой стиль для изображения и кнопок */
+        #gallery {
+            text-align: center;
+            margin-top: 20px;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        button {
+            margin: 5px;
+            padding: 10px 15px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body id="elem" >
+    <h1 class="page-title">Галерея изображений</h1>
+    <div id="gallery">
+        <img id="image" src="assets/image/гора.jpg" alt="Gallery Image">
+        <br>
+        <div class="but">
+        <button onclick="prevImage()">Назад</button>
+        <button onclick="nextImage()">Вперёд</button>
+    </div>
+    </div>
+    <script>
+        
+        // Массив изображений
+        const images = [
+            'assets/image/гора.jpg',
+            'assets/image/pic1.webp',
+            'assets/image/горы3.webp',  
+            ];
+
+        let currentIndex = 0; // Индекс текущего изображения
+
+        // Функция для отображения текущего изображения
+        function displayImage() {
+            const imgElement = document.getElementById('image');
+            imgElement.src = images[currentIndex];
+        }
+
+        // Функция для переключения на следующее изображение
+        function nextImage() {
+            currentIndex = (currentIndex + 1) % images.length; // Циклическое переключение
+            displayImage();
+        }
+
+        // Функция для переключения на предыдущее изображение
+        function prevImage() {
+            currentIndex = (currentIndex - 1 + images.length) % images.length; // Циклическое переключение
+            displayImage();
+        }
+
+        // Изначально отображаем первое изображение
+        displayImage();
+
+    </script>
+</body>
+</html>

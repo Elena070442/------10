@@ -1,0 +1,27 @@
+#gallery{
+    position: relative;
+    width: 600px;
+    height: 800px;
+    margin: 0 auto;
+    overflow: hidden;
+    background-color: aquamarine;
+}
+.page-title{
+    text-align: center;
+}
+#image{
+    width: 100%;
+    height: 50%;
+    object-fit: cover;
+}
+button{
+    width: 150px;
+    background-color: grey;
+}
+.but{
+    display: flex;
+    justify-content: space-between;
+}
+#elem{
+    background-color: aquamarine;
+}

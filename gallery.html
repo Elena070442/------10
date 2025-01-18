@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/style/gallery.css">
+    <script src="gallery.js"></script>
+    <title>GallerY</title>
+    <style>
+        #elem{
+            margin-top: 100px;
+            height: 600px;
+            width: 800px;
+        }
+        #elem_img{
+            width: 600px;
+            height: 300px;
+            margin: auto;
+        }
+    </style>
+</head>
+<body id="elem">
+    <div>
+    <h1 class="page-title">Горы</h1>
+    <div >
+        <div id="elem-content">Element</div>
+        <img id="elem_img" src="assets/image/pic1.webp" alt="горы">
+    <div>
+    <button class="prev-button" oncklick="addImage()">Previous</button>
+    <button class="next-button" oncklick="addImage()">Next</button>
+    </div>
+</div>
+
+<!-- Написать функцию "Я учу JavaScript!" -->
+    <button onclick="sayHello()">Я учу JavaScript!</button>
+</body>
+    <script>
+        function sayHello() {
+            console.log("Я учу JavaScript!");
+        }
+    </script>
+
+    <script>
+    //написать функцию 'Я изучаю JavaScript.'
+function studyJS(){
+    console.log('Я изучаю JavaScript!');
+}
+studyJS();
+
+      //Получить элемент
+    const elem = document.getElementById('elem');
+    const image = document.getElementById('elem_img');
+    console.log(image);
+
+    //Создаем функцию
+    function addImage(){
+        image.src='assets/iamge/горы4.jpg';
+    }
+    
+    //Сделать его фон синим
+    elem.style.background = 'blue';
+    
+        //Заменить ссылку на картинку
+        //image.src="assets/image/горы4.jpg";
+    </script>
+    
+    
+    
+
+</html>
